@@ -3,10 +3,10 @@ const weatherController = require('../controllers/weatherController');
 describe('Weather controller', () => {
   it(`should throw zip code required`, async () => {
     try {
-      await weatherController.getWeatherByZipCode('9210');
+      await weatherController.getWeatherByZipCode();
     } catch (thrownError) {
       expect(thrownError).toEqual(
-        new Error(`Invalid zip code, city not found.`)
+        new Error(`zip code is required`)
       );
     }
   });
