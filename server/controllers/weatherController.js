@@ -7,7 +7,7 @@ module.exports = {
     const openWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=655dfc390726be35679ee1f171b45301`;
     try {
       let weatherData = await axios.get(openWeatherUrl);
-      if (weatherData && weatherData.data) return weatherData.data;
+      if (weatherData && weatherData.data) return {...weatherData.data, zipCode: zip};
       return `No data found`;
     } catch (error) {
       if (error.response.data.cod && error.response.data.cod === '404')
