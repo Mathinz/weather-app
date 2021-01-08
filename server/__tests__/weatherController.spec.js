@@ -1,7 +1,7 @@
 const weatherController = require('../controllers/weatherController');
 
 describe('Weather controller', () => {
-  it(`should throw an error`, async () => {
+  it(`should throw zip code required`, async () => {
     try {
       await weatherController.getWeatherByZipCode('9210');
     } catch (thrownError) {
@@ -16,7 +16,7 @@ describe('Weather controller', () => {
     expect(weatherData.cod).toEqual(200);
   });
 
-  it(`should throw an error`, async () => {
+  it(`should throw a invalid zip code error`, async () => {
     try {
       await weatherController.getWeatherByZipCode('9210');
     } catch (thrownError) {
