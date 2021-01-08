@@ -7,8 +7,8 @@ const AppHeader = ({ searchBar }) => {
     <PageHeader
       ghost={true}
       backIcon={false}
-      title="Weather"
-      extra={searchBar ? [<SearchZip />] : []}
+      title="Weather App"
+      extra={searchBar ? [<SearchZip key={"1"}/>] : []}
     />
   );
 };

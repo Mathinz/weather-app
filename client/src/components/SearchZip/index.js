@@ -35,9 +35,7 @@ const SearchZip = () => {
     <div className="search-container">
       <AutoComplete
         dropdownMatchSelectWidth={252}
-        size="large"
         value={searchValue}
-        autoComplete={true}
         options={autoComplete}
         onSelect={(e) => setSearchValue(e)}
         onChange={(e) => (!isNaN(e) && e.length < 6 ? setSearchValue(e) : "")}
