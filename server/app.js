@@ -20,7 +20,7 @@ app.use(
 );
 app.use(bodyParser.json({ limit: '5mb' }));
 
-app.use('/', require('./routes/weatherRoute.js'));
+app.use('/', /* cors(),  */require('./routes/weatherRoute.js'));
 app.use('/health', (req, res) => res.json('ok'));
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname + '/404.html'));

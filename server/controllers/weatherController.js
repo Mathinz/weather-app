@@ -4,7 +4,7 @@ const GENERIC_ERR = `Something went wrong, please try again`;
 module.exports = {
   getWeatherByZipCode: async (zip) => {
     if (!zip) throw new Error(`zip code is required`);
-    const openWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=${process.env.APP_ID}`;
+    const openWeatherUrl = `http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&appid=655dfc390726be35679ee1f171b45301`;
     try {
       let weatherData = await axios.get(openWeatherUrl);
       if (weatherData && weatherData.data) return weatherData.data;
