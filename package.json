@@ -7,8 +7,11 @@
     "test": "jest",
     "client": "cd client && yarn start",
     "server": "node app.js",
-    "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "build": "cd client && yarn build"
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "build": "cd client && yarn build",
+    "backend": "node app.js",
+    "frontend": "serve -s client/build",
+    "start": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\""
   },
   "keywords": [],
   "author": "",

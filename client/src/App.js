@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { Layout } from "antd";
 import AppHeader from "./components/Header";
-import Welcome from "./components/Welcome";
 import WeatherCard from "./components/WeatherCard";
 import Favourites from "./components/Favourites";
 import { useSelector } from "react-redux";
@@ -14,11 +13,11 @@ function App() {
   );
   return (
     <Layout>
-      <AppHeader searchBar={weatherData?.success} />
+      <AppHeader searchBar={true} />
       <div className="antd-container">
         {weatherData?.success ? (
-          <div className="row">
-            <div className={favourites.length > 0 ? "col-md-8" : "col-md-12"}>
+          <div className="row flex">
+            <div className={"col-md-8"}>
               <WeatherCard />
             </div>
             {favourites.length > 0 ? (
@@ -29,9 +28,7 @@ function App() {
               ""
             )}
           </div>
-        ) : (
-          <Welcome />
-        )}
+        ) : null}
       </div>
     </Layout>
   );
