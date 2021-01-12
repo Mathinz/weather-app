@@ -11,6 +11,7 @@ RUN mkdir files
 COPY . .
 
 RUN npm i -S serve
+RUN npm i react-scripts
 
 RUN cd client && npm run build
 RUN npm i
